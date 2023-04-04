@@ -12,32 +12,49 @@ public class InsertionSort {
 
     /**
      * 插入排序的时间复杂度和数据的初始状态有关
+     * 个人理解：插入排序的局部排序为冒泡排序
      * @param arr
      */
     public static void insertionSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
         }
-        for (int i = 1; i < arr.length; i++) { // 0 ~ i 做到有序
+        //做到 0 ~ 1 局部有序，最终实现整体有序（局部排序过程中基于冒泡的思想）
+        //做到 0 ~ 2 局部有序，最终实现整体有序（局部排序过程中基于冒泡的思想）
+        for (int i = 1; i < arr.length; i++) {
             for (int j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) {
                 swap(arr, j, j + 1);
             }
         }
     }
 
-    // i和j是一个位置的话，会出错
+    /***
+     * 交换操作
+     * @param arr
+     * @param i
+     * @param j
+     */
     public static void swap(int[] arr, int i, int j) {
+        //i和j是一个位置的话，会出错
         arr[i] = arr[i] ^ arr[j];
         arr[j] = arr[i] ^ arr[j];
         arr[i] = arr[i] ^ arr[j];
     }
 
-    // for test
+    /***
+     * 比较器
+     * @param arr
+     */
     public static void comparator(int[] arr) {
         Arrays.sort(arr);
     }
 
-    // for test
+    /***
+     * 随机数组生成器
+     * @param maxSize
+     * @param maxValue
+     * @return
+     */
     public static int[] generateRandomArray(int maxSize, int maxValue) {
         // Math.random() -> [0,1) 所有的小数，等概率返回一个
         // Math.random() * N -> [0,N) 所有小数，等概率返回一个
@@ -49,7 +66,11 @@ public class InsertionSort {
         return arr;
     }
 
-    // for test
+    /***
+     * 数组复制
+     * @param arr
+     * @return
+     */
     public static int[] copyArray(int[] arr) {
         if (arr == null) {
             return null;
@@ -61,7 +82,12 @@ public class InsertionSort {
         return res;
     }
 
-    // for test
+    /***
+     * 数组比较
+     * @param arr1
+     * @param arr2
+     * @return
+     */
     public static boolean isEqual(int[] arr1, int[] arr2) {
         if ((arr1 == null && arr2 != null) || (arr1 != null && arr2 == null)) {
             return false;
@@ -80,7 +106,10 @@ public class InsertionSort {
         return true;
     }
 
-    // for test
+    /***
+     * 数组打印
+     * @param arr
+     */
     public static void printArray(int[] arr) {
         if (arr == null) {
             return;
@@ -91,7 +120,10 @@ public class InsertionSort {
         System.out.println();
     }
 
-    // for test
+    /***
+     * 对数器
+     * @param args
+     */
     public static void main(String[] args) {
         int testTime = 500000;
         int maxSize = 100; // 随机数组的长度0～100

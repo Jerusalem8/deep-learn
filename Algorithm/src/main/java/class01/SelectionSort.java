@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /****
  * @Author: jerusalem
- * @Description: Code01_SelectionSort
+ * @Description: SelectionSort
  * 选择排序
  * @Date 2023-04-03 15:57
  *****/
@@ -24,32 +24,50 @@ public class SelectionSort {
         }
     }
 
-    //交换操作
+    /***
+     * 交换操作
+     * @param arr
+     * @param i
+     * @param j
+     */
     public static void swap(int[] arr, int i, int j) {
         int tmp = arr[i];
         arr[i] = arr[j];
         arr[j] = tmp;
     }
 
-    // for test
+    /***
+     * 比较器（对数器用来做对比的方法B）
+     * @param arr
+     */
     public static void comparator(int[] arr) {
+        //系统提供的排序方法，肯定正确
         Arrays.sort(arr);
     }
 
-    // for test
+    /***
+     * 随机数组生成器
+     * @param maxSize
+     * @param maxValue
+     * @return
+     */
     public static int[] generateRandomArray(int maxSize, int maxValue) {
-        // Math.random()   [0,1)
-        // Math.random() * N  [0,N)
-        // (int)(Math.random() * N)  [0, N-1]
-        int[] arr = new int[(int) ((maxSize + 1) * Math.random())];
+        // Math.random()  等概率返回一个[0,1)中的小数
+        // Math.random()*N  等概率返回一个[0,N)中的小数
+        // (int)(Math.random()*N)  等概率返回一个[0, N-1]中的整数
+        int[] arr = new int[(int) ((maxSize + 1) * Math.random())];//数组长度随机
         for (int i = 0; i < arr.length; i++) {
-            // [-? , +?]
+            //数组的值随机，做一个减法可以保证随机数的范围为[-X，+X]
             arr[i] = (int) ((maxValue + 1) * Math.random()) - (int) (maxValue * Math.random());
         }
         return arr;
     }
 
-    // for test
+    /***
+     * 数组复制
+     * @param arr
+     * @return
+     */
     public static int[] copyArray(int[] arr) {
         if (arr == null) {
             return null;
@@ -61,7 +79,12 @@ public class SelectionSort {
         return res;
     }
 
-    // for test
+    /***
+     * 数组比较
+     * @param arr1
+     * @param arr2
+     * @return
+     */
     public static boolean isEqual(int[] arr1, int[] arr2) {
         if ((arr1 == null && arr2 != null) || (arr1 != null && arr2 == null)) {
             return false;
@@ -80,7 +103,10 @@ public class SelectionSort {
         return true;
     }
 
-    // for test
+    /**
+     * 数组打印
+     * @param arr
+     */
     public static void printArray(int[] arr) {
         if (arr == null) {
             return;
@@ -88,12 +114,15 @@ public class SelectionSort {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
-        System.out.println();
+        System.out.println();//换行
     }
 
-    // for test
+    /***
+     * 对数器
+     * @param args
+     */
     public static void main(String[] args) {
-        int testTime = 500000;
+        int testTime = 500000;    //测试次数
         int maxSize = 100;
         int maxValue = 100;
         boolean succeed = true;

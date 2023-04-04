@@ -13,7 +13,8 @@ public class BubbleSort {
         if (arr == null || arr.length < 2) {
             return;
         }
-        for (int e = arr.length - 1; e > 0; e--) { // 0 ~ e
+        //相邻位置两两比较
+        for (int e = arr.length - 1; e > 0; e--) {
             for (int i = 0; i < e; i++) {
                 if (arr[i] > arr[i + 1]) {
                     swap(arr, i, i + 1);
@@ -22,19 +23,56 @@ public class BubbleSort {
         }
     }
 
-    // 交换arr的i和j位置上的值
+    /***
+     * ★利用异或运算交换两个数的值（性质：满足交换律和结合律）★
+     * 例 a = 甲，b = 乙
+     * 然后执行如下三行代码：
+     * （1）a = a ^ b;
+     * （2）b = a ^ b;
+     * （3）a = a ^ b;
+     * 代码分析：
+     * （1）行代码执行完毕后，a = 甲^乙，b = 乙；
+     * （2）行代码执行完毕后，a = 甲^乙，b = 甲^乙^乙 = 甲^0 = 甲；（两个相同的数异或结果为0；任何数与0异或结果不变）
+     * （3）行代码执行完毕后，a = 甲^乙^甲 = 甲^甲^乙 = 0^乙 = 乙，b = 甲，至此两个数交换完成。
+     * 需要注意的是，i和j是一个位置的话，会出错，数字会变成0，因为是一块内存区域；两个数可以相等，但不能是一个数
+     * 也就是说，需要两块内存空间才能实现交换
+     */
     public static void swap(int[] arr, int i, int j) {
-        arr[i] = arr[i] ^ arr[j];
-        arr[j] = arr[i] ^ arr[j];
-        arr[i] = arr[i] ^ arr[j];
+        arr[i] = arr[i] ^ arr[j];//（1）
+        arr[j] = arr[i] ^ arr[j];//（2）
+        arr[i] = arr[i] ^ arr[j];//（3）
     }
 
-    // for test
+    /***
+     * 测试利用异或运算交换两个数的值
+     * @param args
+     */
+//    public static void main(String[] args) {
+//        int a = 88;
+//        int b = -10;
+//
+//        a = a ^ b;
+//        b = a ^ b;
+//        a = a ^ b;
+//
+//        System.out.println(a);
+//        System.out.println(b);
+//    }
+
+    /***
+     * 比较器
+     * @param arr
+     */
     public static void comparator(int[] arr) {
         Arrays.sort(arr);
     }
 
-    // for test
+    /***
+     * 随机数组生成器
+     * @param maxSize
+     * @param maxValue
+     * @return
+     */
     public static int[] generateRandomArray(int maxSize, int maxValue) {
         int[] arr = new int[(int) ((maxSize + 1) * Math.random())];
         for (int i = 0; i < arr.length; i++) {
@@ -43,7 +81,11 @@ public class BubbleSort {
         return arr;
     }
 
-    // for test
+    /***
+     * 数组复制
+     * @param arr
+     * @return
+     */
     public static int[] copyArray(int[] arr) {
         if (arr == null) {
             return null;
@@ -55,7 +97,12 @@ public class BubbleSort {
         return res;
     }
 
-    // for test
+    /***
+     * 数组比较
+     * @param arr1
+     * @param arr2
+     * @return
+     */
     public static boolean isEqual(int[] arr1, int[] arr2) {
         if ((arr1 == null && arr2 != null) || (arr1 != null && arr2 == null)) {
             return false;
@@ -74,7 +121,10 @@ public class BubbleSort {
         return true;
     }
 
-    // for test
+    /***
+     * 数组打印
+     * @param arr
+     */
     public static void printArray(int[] arr) {
         if (arr == null) {
             return;
@@ -85,7 +135,10 @@ public class BubbleSort {
         System.out.println();
     }
 
-    // for test
+    /***
+     * 对数器
+     * @param args
+     */
     public static void main(String[] args) {
         int testTime = 500000;
         int maxSize = 100;
