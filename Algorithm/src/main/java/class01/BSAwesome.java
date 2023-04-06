@@ -9,6 +9,7 @@ package class01;
 public class BSAwesome {
 
     /***
+     * 获取局部最小值
      * 分析：不一定只有数组有序才能用二分法
      * 具体讲解见视频 https://www.bilibili.com/video/BV1NU4y1M7rF?p=40  1小时40分钟左右
      * @param arr

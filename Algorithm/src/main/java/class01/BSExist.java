@@ -5,10 +5,16 @@ import java.util.Arrays;
 /****
  * @Author: jerusalem
  * @Description: BSExist
- * 二分法查找某个数是否存在
+ * 查找某个数是否存在
  * @Date 2023-04-04 15:37
  *****/
 public class BSExist {
+    /***
+     * 二分法查找数组中的某个数是否存在
+     * @param sortedArr
+     * @param num
+     * @return
+     */
     public static boolean exist(int[] sortedArr, int num) {
         if (sortedArr == null || sortedArr.length == 0) {
             return false;
@@ -33,7 +39,7 @@ public class BSExist {
     }
 
     /***
-     * 比较器：普通的查找某个数方法（遍历）
+     * 比较器：遍历查找某个数方法
      * @param sortedArr
      * @param num
      * @return

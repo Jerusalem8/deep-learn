@@ -9,6 +9,12 @@ import java.util.Arrays;
  * @Date 2023-04-04 16:02
  *****/
 public class BSNearLeft {
+    /***
+     * 查找数组中满足>=value的最左位置
+     * @param arr
+     * @param value
+     * @return
+     */
     // 在arr上，找满足>=value的最左位置
     public static int nearestIndex(int[] arr, int value) {
         int L = 0;

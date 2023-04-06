@@ -70,6 +70,11 @@ public class ReverseList {
         return pre;
     }
 
+    /***
+     * 对数器：反转单链表
+     * @param head
+     * @return
+     */
     public static Node testReverseLinkedList(Node head) {
         if (head == null) {
             return null;
@@ -87,6 +92,11 @@ public class ReverseList {
         return list.get(N - 1);
     }
 
+    /***
+     * 对数器：反转双向链表
+     * @param head
+     * @return
+     */
     public static DoubleNode testReverseDoubleList(DoubleNode head) {
         if (head == null) {
             return null;
@@ -109,7 +119,12 @@ public class ReverseList {
         return list.get(N - 1);
     }
 
-    // for test
+    /***
+     * 随机单链表生成器
+     * @param len
+     * @param value
+     * @return
+     */
     public static Node generateRandomLinkedList(int len, int value) {
         int size = (int) (Math.random() * (len + 1));
         if (size == 0) {
@@ -127,7 +142,12 @@ public class ReverseList {
         return head;
     }
 
-    // for test
+    /***
+     * 随机双链表生成器
+     * @param len
+     * @param value
+     * @return
+     */
     public static DoubleNode generateRandomDoubleList(int len, int value) {
         int size = (int) (Math.random() * (len + 1));
         if (size == 0) {
@@ -196,7 +216,10 @@ public class ReverseList {
         return true;
     }
 
-    // for test
+    /***
+     * 对数器主程序
+     * @param args
+     */
     public static void main(String[] args) {
         int len = 50;
         int value = 100;
@@ -230,9 +253,7 @@ public class ReverseList {
             if (!checkDoubleListReverse(list4, node4)) {
                 System.out.println("Oops4!");
             }
-
         }
         System.out.println("test finish!");
-
     }
 }

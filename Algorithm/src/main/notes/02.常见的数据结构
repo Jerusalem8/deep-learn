@@ -1,2 +1,19 @@
 1.链表
-单链表、双向链表
+（1）单链表
+（2）双链表
+
+2.栈和队列的实际实现
+（1）利用双向链表实现
+（2）利用数组实现
+注：栈和队列的实际应用非常多，在刷题中巩固，不做过多笔记，相关算法见左程云【Github】 https://github.com/algorithmzuo/algorithmbasic2020/tree/master/src/class03
+
+3.递归★
+递归算法的时间复杂度 公式 T(N)=aT(N/b)+O(N^d)   （a,b,d均为常数）
+（1）子问题的规模小于总规模N就可以使用此公式
+（2）N/b代表子问题的规模大小，a代表子问题调用的次数
+（3）O(N^d)代表的是除子问题之外其他部分代码的时间复杂度级别
+另外，有关于logN的判断定理，见图片（个人笔记图床）
+具体讲解视频 https://www.bilibili.com/video/BV1NU4y1M7rF?p=41     2小时左右
+
+4.哈希表和有序表
+重点见代码 class02 -> HashMapAndSortedMap

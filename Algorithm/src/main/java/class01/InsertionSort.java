@@ -29,7 +29,7 @@ public class InsertionSort {
     }
 
     /***
-     * 交换操作
+     * 异或运算交换操作（不一定非要用异或运算，纯粹炫技）
      * @param arr
      * @param i
      * @param j

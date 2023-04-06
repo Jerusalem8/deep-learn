@@ -9,6 +9,10 @@ import java.util.Arrays;
  * @Date 2023-04-03 16:15
  *****/
 public class BubbleSort {
+    /***
+     * 冒泡排序算法
+     * @param arr
+     */
     public static void bubbleSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
@@ -60,7 +64,7 @@ public class BubbleSort {
 //    }
 
     /***
-     * 比较器
+     * 比较器：工具包提供的排序算法
      * @param arr
      */
     public static void comparator(int[] arr) {
@@ -161,5 +165,4 @@ public class BubbleSort {
         bubbleSort(arr);
         printArray(arr);
     }
-
 }

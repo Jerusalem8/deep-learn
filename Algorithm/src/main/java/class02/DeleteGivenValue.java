@@ -3,7 +3,7 @@ package class02;
 /****
  * @Author: jerusalem
  * @Description: DeleteGivenValue
- * 链表中删除给定值
+ * 删除给定值
  * @Date 2023-04-05 20:16
  *****/
 public class DeleteGivenValue {

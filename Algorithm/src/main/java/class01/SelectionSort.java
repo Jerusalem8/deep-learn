@@ -9,6 +9,10 @@ import java.util.Arrays;
  * @Date 2023-04-03 15:57
  *****/
 public class SelectionSort {
+    /***
+     * 选择排序算法
+     * @param arr
+     */
     public static void selectionSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
@@ -25,7 +29,7 @@ public class SelectionSort {
     }
 
     /***
-     * 交换操作
+     * 交换操作（实用，不一定非得用异或运算）
      * @param arr
      * @param i
      * @param j
