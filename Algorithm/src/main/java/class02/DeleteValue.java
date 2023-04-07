@@ -6,7 +6,7 @@ package class02;
  * 删除给定值
  * @Date 2023-04-05 20:16
  *****/
-public class DeleteGivenValue {
+public class DeleteValue {
     /***
      * 单链表结构
      */

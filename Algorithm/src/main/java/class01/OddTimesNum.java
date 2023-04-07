@@ -6,7 +6,7 @@ package class01;
  * 寻找数组中出现奇数次的数字并打印
  * @Date 2023-04-04 20:18
  *****/
-public class printOddTimesNum {
+public class OddTimesNum {
 
     /***
      * 寻找数组中出现奇数次的数字（一个）并打印
